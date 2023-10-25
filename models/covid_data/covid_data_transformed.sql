@@ -5,6 +5,6 @@ WITH transformed_data AS (
   FROM "{{ source('bert_similarity', 'covid_data') }}"
 )
 
-SELECT *
+INSERT *
 INTO bert_similarity.covid_data_transformed
 FROM transformed_data;
