@@ -1,0 +1,6 @@
+version: 2
+
+sources:
+  - name: bert_similarity
+    tables:
+      - name: covid_data
