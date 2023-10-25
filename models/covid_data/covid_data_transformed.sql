@@ -2,7 +2,7 @@ WITH transformed_data AS (
   SELECT
     date,
     total_confirmed
-  FROM {{ ref('covid_data') }}
+  FROM "{{ source('bert_similarity', 'covid_data') }}"
 )
 
 SELECT *
