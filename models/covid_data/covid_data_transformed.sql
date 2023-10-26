@@ -1,10 +1,3 @@
-WITH transformed_data AS (
-  SELECT
-    date,
-    total_confirmed
-  FROM "{{ source('bert_similarity', 'covid_data') }}"
-)
+{{config(alias='covid_data_transformed_2',  materialized='table')}}
 
-INSERT *
-INTO bert_similarity.covid_data_transformed
-FROM transformed_data;
+SELECT date, total_confirmed FROM `bert_similarity.covid_data`
